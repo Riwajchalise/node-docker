@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "stert": "node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-redis": "^6.1.3",
     "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+    "express-session": "^1.17.3",
+    "mongoose": "^6.8.2",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
