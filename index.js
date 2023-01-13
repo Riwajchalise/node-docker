@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const session = require("express-session");
 const redis = require("redis");
 let RedisStore = require("connect-redis")(session);
+var cors = require('cors')
+ 
+
 
 
 const { 
@@ -41,6 +44,7 @@ const connectWithRetry = () => {
 connectWithRetry();
 
 app.enable("trust proxy");
+app.use(cors({}));
 app.use(session({
   store: new RedisStore({client: redisClient}),
   secret: SESSION_SECRET,
@@ -55,7 +59,7 @@ app.use(session({
 
 app.use(express.json());
 
-app.get("/api/v1/posts", (req, res) => {
+app.get("/api/v1/", (req, res) => {
     res.send("<h2>Docker Compose 2:55!</h2>");
     console.log('yeah it ran!');
 });
