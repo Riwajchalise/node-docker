@@ -18,10 +18,7 @@ services:
       - SESSION_SECRET=secret
 
     command: npm run dev
-
   mongo: #service name for mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=riwaj
       - MONGO_INITDB_ROOT_PASSWORD=mypassword
-
-  
