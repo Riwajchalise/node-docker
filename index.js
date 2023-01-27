@@ -12,7 +12,8 @@ const {
   MONGO_USER, 
   MONGO_PASSWORD, 
   MONGO_IP, 
-  MONGO_PORT, 
+  MONGO_PORT,
+  MONGO_DB, 
   REDIS_URL,
   REDIS_PORT,
   SESSION_SECRET
@@ -26,7 +27,7 @@ const postRouter = require("./routes/postRoutes")
 const userRouter =  require("./routes/userRoutes")
 
 const app = express()
-const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
+const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
 const connectWithRetry = () => {
   mongoose.
