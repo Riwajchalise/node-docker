@@ -5,7 +5,7 @@ If you are running locally and have docker installed:
 
 - Prod: ```docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d```
 
-- Dev: ```docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d```
+- Dev: ```docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d```
 
 # API end point for signup
 
