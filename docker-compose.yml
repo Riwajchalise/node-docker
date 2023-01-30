@@ -13,17 +13,19 @@ services:
       - mongo
 
 #adding mango container
-  mongo: #service name for mongo
+  mongo:
+    container_name: mongo
     image: mongo
+    restart: always
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=riwaj
-      - MONGO_INITDB_ROOT_PASSWORD=mypassword
-    volumes:
-      - mongo-db:/data/db #Named volume for data persistance
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+
+      volumes:
+        mongo-db:/data/db #Named volume for data persistance
 #adding redis container
   redis:
     image: redis
-    
 
 volumes:
   mongo-db:
