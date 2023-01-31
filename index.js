@@ -4,12 +4,12 @@ const session = require("express-session");
 const redis = require("redis");
 let RedisStore = require("connect-redis")(session);
 var cors = require('cors')
- 
 
 
 
-const { 
-  MONGO_USER, 
+
+const {
+  MONGO_USER,
   MONGO_PASSWORD, 
   MONGO_IP, 
   MONGO_PORT,
@@ -27,6 +27,7 @@ const postRouter = require("./routes/postRoutes")
 const userRouter =  require("./routes/userRoutes")
 
 const app = express()
+console.log(MONGO_IP + MONGO_USER + MONGO_PASSWORD + MONGO_PORT + MONGO_DB + REDIS_URL + REDIS_PORT + SESSION_SECRET)
 const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
 const connectWithRetry = () => {
